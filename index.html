@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Service Team Roster</title>
+<style>
+:root{--navy:#12283d;--ink:#18334b;--muted:#6c7c8c;--bg:#f3f6f9;--line:#dee6ee;--blue:#2765de;--green:#13836b;--amber:#b97815;--red:#bf3d50}*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:white;color:var(--ink);padding:9px 13px;border-radius:8px}button:hover{border-color:var(--blue)}button:focus-visible,a:focus-visible{outline:3px solid #96b8ff;outline-offset:2px}.primary{background:var(--blue);color:white;border-color:var(--blue)}.danger{color:var(--red)}.small{font-size:12px;padding:5px 9px}.app{display:grid;grid-template-columns:224px 1fr;min-height:100vh}aside{background:var(--navy);color:white;padding:27px 16px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.brand{font-size:20px;font-weight:800;padding:0 12px;letter-spacing:-.6px}.brand span{color:#8cafef}.subbrand{font-size:11px;color:#b6c7d8;padding:2px 12px 26px;letter-spacing:1.5px;text-transform:uppercase}.nav{display:grid;gap:5px}.nav button{text-align:left;background:transparent;border:0;color:#c1cfdd;padding:12px}.nav button.selected{background:#29445f;color:white}.nav b{display:inline-block;width:27px;font-size:17px}.aside-foot{margin-top:auto;color:#c1cfdd;font-size:12px;padding:20px 12px}main{padding:30px;min-width:0;max-width:1700px;width:100%}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:22px}h1{font-size:27px;letter-spacing:-.8px;margin:0}h2{font-size:18px;margin:0 0 14px}h3{font-size:15px;margin:0 0 12px}p{margin:5px 0}.muted{color:var(--muted)}.actions,.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.metric{background:white;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px}.metric strong{font-size:29px;display:block;letter-spacing:-1px}.metric small{color:var(--muted)}.metric:nth-child(2){border-top:3px solid var(--blue)}.metric:nth-child(3){border-top:3px solid var(--green)}.metric:nth-child(4){border-top:3px solid var(--amber)}label{display:block;color:var(--muted);font-size:12px;font-weight:600;margin-bottom:5px}input,select,textarea{padding:9px 10px;border:1px solid #cbd6e0;border-radius:7px;color:var(--ink);background:white;max-width:100%}textarea{min-height:76px}input[type=date]{width:150px}.toolbar{margin-bottom:16px}.toolbar input[type=search]{width:260px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:13px}th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);background:#f7f9fb}td,th{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}td .muted{font-size:11px;white-space:normal;max-width:230px}tr:last-child td{border-bottom:0}.pill{display:inline-block;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:650;background:#edf2f7;color:#516174}.pill.green{background:#e3f5ee;color:var(--green)}.pill.blue{background:#e9f0ff;color:var(--blue)}.pill.amber{background:#fff2d9;color:var(--amber)}.pill.red{background:#fde9ed;color:var(--red)}.bar{height:6px;background:#eaf0f5;border-radius:6px;margin-top:5px;width:90px;overflow:hidden}.bar i{display:block;height:100%;background:var(--blue)}.empty{text-align:center;padding:40px;color:var(--muted)}.split{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}.notice{padding:12px 16px;border-radius:8px;background:#eaf1ff;color:#385577;margin-bottom:18px;font-size:12px}.alert{background:#fff3e3;color:#825412}.timeline th,.timeline td{text-align:center;min-width:36px;padding:8px 3px;font-size:11px}.timeline .person{text-align:left;min-width:220px;position:sticky;left:0;background:white;z-index:1;padding:10px}.timeline th.person{background:#f7f9fb}.day{border-radius:4px;min-height:25px;padding:4px 2px;display:block}.day.free{background:#e9f6ef;color:var(--green)}.day.booked{background:#e5edff;color:var(--blue)}.day.leave{background:#fff0d5;color:var(--amber)}.day.over{background:#fce2e7;color:var(--red)}.day.off{background:#f1f3f5;color:#95a1ad}.today{outline:2px solid #779bdd;outline-offset:-2px}.legend{display:flex;gap:14px;font-size:12px;flex-wrap:wrap}.legend span::before{content:'';display:inline-block;width:9px;height:9px;background:var(--green);border-radius:2px;margin-right:5px}.legend .blue::before{background:var(--blue)}.legend .amber::before{background:var(--amber)}.legend .red::before{background:var(--red)}dialog{border:0;border-radius:14px;width:620px;max-width:95vw;max-height:90vh;padding:0;box-shadow:0 18px 70px #12283d44}dialog::backdrop{background:#12283d80}.modal-head{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.modal-head h2{margin:0}form{padding:22px 24px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.fields input,.fields select,.fields textarea{width:100%}.full{grid-column:1/-1}.form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}.error{color:var(--red);font-size:13px;margin-top:14px;white-space:pre-line}.tick{display:flex;align-items:center;gap:8px}.tick input{width:auto}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;padding:12px 20px;border-radius:8px;z-index:9;display:none;max-width:90vw}.count{font-size:12px;color:var(--muted)}.item{border-bottom:1px solid var(--line);padding:12px 0}.item:last-child{border-bottom:0}.details{white-space:normal;min-width:150px;max-width:260px}.link{color:var(--blue)}.row-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}a{color:var(--blue)}@media(max-width:1050px){.app{grid-template-columns:180px 1fr}main{padding:20px}.cards{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}@media(max-width:700px){.app{display:block}aside{position:relative;height:auto;padding:15px}.subbrand,.aside-foot{display:none}.nav{display:flex;overflow:auto;margin-top:12px}.nav button{white-space:nowrap;font-size:12px;padding:8px}.nav b{display:none}.brand{font-size:18px}main{padding:15px}.fields{grid-template-columns:1fr}.full{grid-column:auto}.card{padding:15px}.metric{padding:13px}.toolbar input[type=search]{width:100%}}@media print{aside,.actions,.toolbar,button,.notice,#toast{display:none!important}.app{display:block}main{padding:0}.card,.metric{break-inside:avoid}.table-wrap{overflow:visible}body{background:white}.timeline .person{position:static}}
+</style></head><body>
+<div class="app"><aside><div class="brand">FIELD<span> / </span>PLAN</div><div class="subbrand">Service team roster</div><nav class="nav" id="nav"></nav><div class="aside-foot">Plan people. Protect capacity.<br><br><span id="saveStatus">Local browser workspace</span></div></aside><main><header class="top"><div><h1 id="heading">Resource overview</h1><p class="muted" id="subtitle"></p></div><div class="actions"><button onclick="exportData()">↓ Backup JSON</button><button onclick="document.getElementById('importFile').click()">↑ Import JSON</button><button class="primary" onclick="openForm('assignment')">+ Assign employee</button></div></header><div id="content"></div></main></div>
+<input type="file" id="importFile" accept=".json,application/json" hidden><dialog id="modal"><div class="modal-head"><h2 id="formTitle"></h2><button aria-label="Close dialog" onclick="modal.close()">✕</button></div><form id="form"><div class="fields" id="fields"></div><div class="error" id="formError" role="alert"></div><div class="form-actions"><button type="button" onclick="modal.close()">Cancel</button><button class="primary" type="submit">Save record</button></div></form></dialog><div id="toast" role="status"></div>
+<script id="seed" type="application/json">{
+  "schemaVersion": 1,
+  "settings": {
+    "title": "Service Team Roster",
+    "workDays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "employees": [
+    {
+      "id": "EMP-001",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Edgar Penones Cortejos",
+      "role": "Service Engineer",
+      "department": "Service",
+      "joiningDate": "2021-01-28",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Service Engineer"
+    },
+    {
+      "id": "EMP-002",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Zayed Mukadam",
+      "role": "Service Engineer",
+      "department": "Service",
+      "joiningDate": "2021-02-14",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Service Engineer"
+    },
+    {
+      "id": "EMP-003",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Judith Dilantha Chandrasekera",
+      "role": "Planning Engineer",
+      "department": "Service",
+      "joiningDate": "2021-02-24",
+      "type": "White Collar",
+      "company": "Meraki Dubai Branch",
+      "skills": "Planning Engineer"
+    },
+    {
+      "id": "EMP-004",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Ashokkumar Kurama",
+      "role": "Senior Service Engineer",
+      "department": "Service",
+      "joiningDate": "2023-09-19",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Senior Service Engineer"
+    },
+    {
+      "id": "EMP-005",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Midhun Baby",
+      "role": "QA/QC Engr.",
+      "department": "Service",
+      "joiningDate": "2023-12-21",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "QA/QC Engr."
+    },
+    {
+      "id": "EMP-006",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Shhid Raaza Khan",
+      "role": "Welder",
+      "department": "Service",
+      "joiningDate": "2024-09-23",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Welder"
+    },
+    {
+      "id": "EMP-007",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Anjani Maurya",
+      "role": "Fitter",
+      "department": "Service",
+      "joiningDate": "2024-09-23",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Fitter"
+    },
+    {
+      "id": "EMP-008",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Aswin Salim Kumar",
+      "role": "QC Inspector",
+      "department": "Service",
+      "joiningDate": "2025-09-24",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "QC Inspector"
+    },
+    {
+      "id": "EMP-009",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Abdul Saleem Thavalappara",
+      "role": "Fitter",
+      "department": "Service",
+      "joiningDate": "2025-09-24",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Fitter"
+    },
+    {
+      "id": "EMP-010",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Pawan Kumar Adhikari",
+      "role": "Mechanical Foreman",
+      "department": "Service",
+      "joiningDate": "2025-09-26",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Mechanical Foreman"
+    },
+    {
+      "id": "EMP-011",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Vasu Akula",
+      "role": "Rigger",
+      "department": "Service",
+      "joiningDate": "2025-10-23",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Rigger"
+    },
+    {
+      "id": "EMP-012",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Sujeet Yadav",
+      "role": "Welder",
+      "department": "Service",
+      "joiningDate": "2025-11-20",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Welder"
+    },
+    {
+      "id": "EMP-013",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Jishnu Kottarathil",
+      "role": "HSE Engineer",
+      "department": "Service",
+      "joiningDate": "2025-12-18",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "HSE Engineer"
+    },
+    {
+      "id": "EMP-014",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Nihal Harish Kotian",
+      "role": "Service Engineer",
+      "department": "Service",
+      "joiningDate": "2026-02-09",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Service Engineer"
+    },
+    {
+      "id": "EMP-015",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Abdul Basith",
+      "role": "Storekeeper",
+      "department": "Service",
+      "joiningDate": "2026-02-12",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Storekeeper"
+    },
+    {
+      "id": "EMP-016",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Samir Ramjibhai Ansodaria",
+      "role": "VP - Operations & Service",
+      "department": "Service",
+      "joiningDate": "2026-03-02",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "VP - Operations & Service"
+    },
+    {
+      "id": "EMP-017",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Sreehari Thattankandi",
+      "role": "HSE Officer",
+      "department": "Service",
+      "joiningDate": "2026-04-06",
+      "type": "White Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "HSE Officer"
+    },
+    {
+      "id": "EMP-018",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Amitkumar Dashrathram Pashwan",
+      "role": "Welder",
+      "department": "Service",
+      "joiningDate": "2026-08-03",
+      "type": "Blue Collar",
+      "company": "Phoenix Global Valves",
+      "skills": "Welder"
+    },
+    {
+      "id": "EMP-019",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Asagar Ansari",
+      "role": "Welder",
+      "department": "Service",
+      "joiningDate": "2026-08-04",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Welder"
+    },
+    {
+      "id": "EMP-020",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Ashish Gouda",
+      "role": "Fitter",
+      "department": "Service",
+      "joiningDate": "2026-08-04",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Fitter"
+    },
+    {
+      "id": "EMP-021",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Manoj Pras",
+      "role": "Welder",
+      "department": "Service",
+      "joiningDate": "2026-08-04",
+      "type": "Blue Collar",
+      "company": "Meraki Dubai Branch",
+      "skills": "Welder"
+    },
+    {
+      "id": "EMP-022",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Rinku Choudhury",
+      "role": "Fitter",
+      "department": "Service",
+      "joiningDate": "2026-08-04",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Fitter"
+    },
+    {
+      "id": "EMP-023",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Sanjeev Kumar",
+      "role": "Mechanical Helper",
+      "department": "Service",
+      "joiningDate": "2026-08-10",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Mechanical Helper"
+    },
+    {
+      "id": "EMP-024",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Ijahar Jalil",
+      "role": "Mechanical Helper",
+      "department": "Service",
+      "joiningDate": "2026-08-10",
+      "type": "Blue Collar",
+      "company": "Phoenix Global Valves",
+      "skills": "Mechanical Helper"
+    },
+    {
+      "id": "EMP-025",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Mohammad Amzad",
+      "role": "Welder",
+      "department": "Service",
+      "joiningDate": "2026-08-10",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Welder"
+    },
+    {
+      "id": "EMP-026",
+      "active": true,
+      "capacity": 100,
+      "notes": "",
+      "name": "Mohammad Harun Ansari",
+      "role": "Mechanical Helper",
+      "department": "Service",
+      "joiningDate": "2026-08-10",
+      "type": "Blue Collar",
+      "company": "Meraki Abu Dhabi",
+      "skills": "Mechanical Helper"
+    }
+  ],
+  "clients": [],
+  "projects": [],
+  "assignments": [],
+  "leaves": [],
+  "source": {
+    "filename": "Existing Service Team Members & Newly hired.xlsx",
+    "convertedAt": "2026-10-06T19:25:09.608834+00:00",
+    "importedEmployees": 26
+  }
+}
+</script>
+<script>
+'use strict';
+const KEY='fieldplan-roster-v1', names={overview:'Resource overview',roster:'Employee roster',timeline:'Capacity timeline',planner:'Find available people',assignments:'Project assignments',projects:'Projects',clients:'Customers',employees:'Employee master',leaves:'Leave & absence',settings:'Settings & data'};
+let db, tab='overview', search='', role='', clientFilter='', stateFilter='', asOf=today(), timelineStart=today(), period=14, planStart=today(), planEnd=addDays(today(),6), planPct=100, editing=null;
+const content=document.getElementById('content'),modal=document.getElementById('modal'),form=document.getElementById('form');
+function today(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Dubai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
+function date(s){return new Date(s+'T00:00:00Z')}
+function addDays(s,n){let d=date(s);d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
+function days(a,b){let out=[];for(let d=a;d<=b;d=addDays(d,1)){out.push(d);if(out.length>3660)break}return out}
+function isWork(d){return db.settings.workDays.includes(date(d).getUTCDay())}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function by(k,id){return db[k].find(x=>x.id===id)}
+function label(k,id){return by(k,id)?.name||'Unknown record'}
+function effective(a){return a.status!=='Cancelled'}
+function load(e,d,skip){return db.assignments.filter(a=>a.employeeId===e.id&&a.id!==skip&&effective(a)&&a.start<=d&&a.end>=d).reduce((s,a)=>s+Number(a.allocation),0)}
+function absence(e,d,skip){return db.leaves.filter(l=>l.employeeId===e.id&&l.id!==skip&&l.status==='Approved'&&l.start<=d&&l.end>=d)}
+function eligible(e,d){return e.active&&(!e.joiningDate||e.joiningDate<=d)&&isWork(d)}
+function free(e,d){return eligible(e,d)&&!absence(e,d).length?Math.max(0,e.capacity-load(e,d)):0}
+function status(e,d){if(!e.active)return ['Inactive',''];if(e.joiningDate&&e.joiningDate>d)return ['Not joined',''];if(!isWork(d))return ['Non-working day',''];let l=load(e,d),a=absence(e,d).length;if(l>e.capacity||(l>0&&a))return ['Conflict','red'];if(a)return ['On leave','amber'];if(l>=e.capacity)return ['Fully booked','blue'];if(l>0)return ['Partly available','green'];return ['No bookings','green']}
+function nextFree(e,d,pct=e.capacity){if(!e.active)return '';for(let i=0;i<1096;i++){let x=addDays(d,i);if(free(e,x)>=pct)return x}return ''}
+function pill(s,c=''){return `<span class="pill ${c}">${esc(s)}</span>`}
+function fmt(d){return d?date(d).toLocaleDateString('en-GB',{timeZone:'UTC',day:'2-digit',month:'short',year:'numeric'}):'—'}
+function activeEmployees(){return db.employees.filter(e=>e.active)}
+function matches(e){let st=status(e,asOf)[0];return (!role||e.role===role)&&(!stateFilter||st===stateFilter)&&(!search||[e.name,e.role,e.skills,e.company,e.department,e.id].join(' ').toLowerCase().includes(search.toLowerCase()))&&(!clientFilter||db.assignments.some(a=>a.employeeId===e.id&&effective(a)&&a.start<=asOf&&a.end>=asOf&&by('projects',a.projectId)?.clientId===clientFilter))}
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display='none',4500)}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));document.getElementById('saveStatus').textContent='Saved in this browser · '+new Date().toLocaleTimeString();return true}catch(e){document.getElementById('saveStatus').textContent='Not saved to browser — export JSON before closing';toast('Browser storage unavailable. Export JSON before closing to keep your work.');return false}}
+function goto(t){tab=t;search='';role='';stateFilter='';clientFilter='';render()}
+function download(text,name,type){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000)}
+function exportData(){download(JSON.stringify(db,null,2),'roster-backup-'+today()+'.json','application/json');toast('Backup downloaded. Keep it safely to restore or transfer your roster.')}
+function csv(rows,name){const safe=v=>{let s=String(v??'');if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};download('\ufeff'+rows.map(r=>r.map(safe).join(',')).join('\r\n'),name,'text/csv;charset=utf-8')}
+function exportRoster(){csv([['Employee ID','Name','Role','As of','Status','Allocated %','Available capacity %','Next full-capacity date','Projects'],...db.employees.filter(matches).map(e=>[e.id,e.name,e.role,asOf,status(e,asOf)[0],load(e,asOf),free(e,asOf),nextFree(e,asOf),db.assignments.filter(a=>a.employeeId===e.id&&effective(a)&&a.start<=asOf&&a.end>=asOf).map(a=>label('projects',a.projectId)).join('; ')])],'employee-roster-'+asOf+'.csv')}
+function option(v,t,selected){return `<option value="${esc(v)}" ${String(v)===String(selected)?'selected':''}>${esc(t)}</option>`}
+function setRoleFilter(value){role=value;render()}
+function tools(extra=''){return `<div class="toolbar"><input aria-label="Search employees" type="search" placeholder="Search name, role, skill, company…" value="${esc(search)}" oninput="search=this.value;renderBodyKeepFocus(this)"><select aria-label="Filter role" onchange="setRoleFilter(this.value)">${option('','All roles',role)}${[...new Set(db.employees.map(e=>e.role))].sort().map(r=>option(r,r,role)).join('')}</select>${extra}</div>`}
+function renderBodyKeepFocus(el){let p=el.selectionStart;render();let input=content.querySelector('input[type=search]');if(input){input.focus();input.setSelectionRange(p,p)}}
+function table(headers,rows){return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.join(''):`<tr><td colspan="${headers.length}" class="empty">No records yet. Use the add button to get started.</td></tr>`}</tbody></table></div>`}
+function editBtn(k,id){return `<button class="small" onclick="openForm('${k}','${esc(id)}')">Edit</button>`}
+function removeBtn(k,id){return `<button class="small danger" onclick="removeRecord('${k}','${esc(id)}')">Delete</button>`}
+function dateTool(){return `<label style="margin:0">As of <input aria-label="As of date" type="date" value="${asOf}" onchange="if(this.value){asOf=this.value;render()}"></label>`}
+function render(){document.getElementById('heading').textContent=names[tab];document.getElementById('subtitle').textContent=db.settings.title+' · '+db.employees.length+' employees';document.getElementById('nav').innerHTML=Object.entries(names).map(([k,n],i)=>`<button class="${tab===k?'selected':''}" onclick="goto('${k}')"><b>${['◈','▤','▦','⌕','⇄','▣','◉','♙','◷','⚙'][i]}</b>${n}</button>`).join('');({overview,roster,timeline,planner,assignments,projects,clients,employees,leaves,settings}[tab])()}
+function overview(){let es=activeEmployees().filter(e=>!e.joiningDate||e.joiningDate<=asOf),work=isWork(asOf),available=es.filter(e=>free(e,asOf)>0),onleave=es.filter(e=>absence(e,asOf).length),capacity=work?es.filter(e=>!absence(e,asOf).length).reduce((s,e)=>s+e.capacity,0):0,used=work?es.reduce((s,e)=>s+load(e,asOf),0):0,conflicts=es.filter(e=>status(e,asOf)[0]==='Conflict');let upcoming=db.assignments.filter(a=>effective(a)&&a.start>asOf).sort((a,b)=>a.start.localeCompare(b.start)).slice(0,7);content.innerHTML=`<div class="toolbar">${dateTool()}<button onclick="goto('planner')">Find team for next project →</button></div><div class="notice">Availability is based on entered assignments and approved leave. No live project or leave records were supplied in the source Excel. Add them before using this roster for deployment decisions.</div><div class="cards"><div class="metric"><small>ACTIVE & JOINED EMPLOYEES</small><strong>${es.length}</strong><small>${db.employees.filter(e=>!e.active).length} inactive</small></div><div class="metric"><small>BOOKED CAPACITY</small><strong>${capacity?Math.round(used/capacity*100)+'%':work?'—':'Off day'}</strong><small>Allocated ${used}% / deployable ${capacity}%</small></div><div class="metric"><small>WITH SPARE CAPACITY</small><strong>${available.length}</strong><small>${available.filter(e=>load(e,asOf)===0).length} with no bookings</small></div><div class="metric"><small>APPROVED LEAVE</small><strong>${onleave.length}</strong><small>${conflicts.length} booking conflicts today</small></div></div><div class="split"><div class="card"><div class="row-head"><h2>Upcoming deployments</h2><button class="small" onclick="goto('assignments')">View all</button></div>${upcoming.length?upcoming.map(a=>`<div class="item"><b>${esc(label('employees',a.employeeId))}</b><p>${esc(label('projects',a.projectId))} · ${esc(label('clients',by('projects',a.projectId)?.clientId))}</p><small class="muted">${fmt(a.start)} → ${fmt(a.end)} · ${a.allocation}%</small></div>`).join(''):'<div class="empty">No upcoming assignments.<br>Add a customer, then a project, then assign your team.</div>'}</div><div class="card"><h2>Ready for the next booking</h2>${available.slice(0,7).map(e=>`<div class="item"><b>${esc(e.name)}</b><p class="muted">${esc(e.role)} · ${free(e,asOf)}% spare capacity</p></div>`).join('')||'<div class="empty">No spare capacity on this date.</div>'}<button onclick="goto('planner')">Check a full project date range</button></div></div>${conflicts.length?`<div class="notice alert">${conflicts.length} employee(s) have leave/booking overlaps or capacity exceeded. Review the roster.</div>`:''}<div class="card"><h2>Planning workflow</h2><p class="muted">1. Add customers and projects. 2. Record approved leave. 3. Find available people for the whole date range. 4. Assign capacity and task. 5. Update end dates when work finishes, and export a backup.</p></div>`}
+function roster(){let es=db.employees.filter(matches);content.innerHTML=`${tools(`${dateTool()}<select aria-label="Status filter" onchange="stateFilter=this.value;render()">${['','No bookings','Partly available','Fully booked','On leave','Conflict','Inactive','Not joined','Non-working day'].map(x=>option(x,x||'All statuses',stateFilter)).join('')}</select><select aria-label="Customer filter" onchange="clientFilter=this.value;render()">${option('','All customers',clientFilter)}${db.clients.map(c=>option(c.id,c.name,clientFilter)).join('')}</select><button onclick="exportRoster()">↓ Excel CSV</button><button onclick="window.print()">Print</button>`)}<div class="card"><div class="row-head"><h2>${es.length} employees</h2><span class="count">Next free = first working day with full employee capacity, within 3 years</span></div>${table(['Employee','Status','Current customer / project','Booked until','Allocation','Spare capacity','Next free date','Action'],es.map(e=>{let a=db.assignments.filter(a=>a.employeeId===e.id&&effective(a)&&a.start<=asOf&&a.end>=asOf),st=status(e,asOf);return `<tr><td><b>${esc(e.name)}</b><div class="muted">${esc(e.role)} · ${esc(e.id)}</div></td><td>${pill(...st)}</td><td class="details">${a.map(a=>`${esc(label('clients',by('projects',a.projectId)?.clientId))}<br><b>${esc(label('projects',a.projectId))}</b> · ${a.allocation}%`).join('<hr>')||'—'}</td><td>${a.length?fmt(a.map(a=>a.end).sort().at(-1)):'—'}</td><td>${isWork(asOf)?load(e,asOf)+'%':'—'}<div class="muted">Capacity ${e.capacity}%</div><div class="bar"><i style="width:${Math.min(100,load(e,asOf)/e.capacity*100)}%"></i></div></td><td>${free(e,asOf)}%</td><td>${fmt(nextFree(e,asOf))}</td><td><button class="small" onclick="openForm('assignment',null,'${e.id}')">Assign</button></td></tr>`}))}</div><p class="muted">Dates are inclusive. Booked until shows the end of current bookings; future bookings can interrupt availability. Use Find available people for a complete date-range check.</p>`}
+function timeline(){let es=db.employees.filter(matches),ds=days(timelineStart,addDays(timelineStart,period-1));content.innerHTML=`${tools(`<label style="margin:0">From <input type="date" value="${timelineStart}" onchange="if(this.value){timelineStart=this.value;render()}"></label><select aria-label="Timeline length" onchange="period=Number(this.value);render()">${[7,14,30].map(x=>option(x,x+' days',period)).join('')}</select><button onclick="timelineStart=addDays(timelineStart,-period);render()">← Previous</button><button onclick="timelineStart=today();render()">Today</button><button onclick="timelineStart=addDays(timelineStart,period);render()">Next →</button>`)}<div class="card"><div class="row-head"><h2>Capacity by working day</h2><div class="legend"><span>Free</span><span class="blue">Booked %</span><span class="amber">Leave</span><span class="red">Conflict</span></div></div><p class="muted">Click any working-day cell to assign. Hover for project / leave details. Grey = non-working day, inactive or not joined.</p><div class="table-wrap"><table class="timeline"><thead><tr><th class="person">Employee / role</th>${ds.map(d=>`<th>${date(d).toLocaleDateString('en-GB',{weekday:'short',timeZone:'UTC'})}<br>${date(d).getUTCDate()} ${date(d).toLocaleDateString('en-GB',{month:'short',timeZone:'UTC'})}</th>`).join('')}</tr></thead><tbody>${es.map(e=>`<tr><td class="person"><b>${esc(e.name)}</b><div class="muted">${esc(e.role)} · ${e.capacity}% capacity</div></td>${ds.map(d=>{let s=status(e,d),l=load(e,d),off=!eligible(e,d),a=absence(e,d),c=off?'off':s[0]==='Conflict'?'over':a.length?'leave':l?'booked':'free',title=db.assignments.filter(a=>a.employeeId===e.id&&effective(a)&&a.start<=d&&a.end>=d).map(a=>label('projects',a.projectId)+' ('+a.allocation+'%)').concat(a.map(x=>x.type+' leave')).join(' | ')||s[0];return `<td><button class="day ${c} ${d===today()?'today':''}" style="width:100%;border:0" title="${esc(title)}" aria-label="${esc(e.name+' '+d+' '+title)}" onclick="openForm('assignment',null,'${e.id}','${d}')">${off?'—':a.length?(l?'!':'L'):l?l+'%':'○'}</button></td>`}).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+function planner(){let valid=planStart&&planEnd&&planStart<=planEnd&&days(planStart,planEnd).length<=366,ds=valid?days(planStart,planEnd).filter(isWork):[],es=activeEmployees().filter(matches).map(e=>({e,min:ds.length?Math.min(...ds.map(d=>free(e,d))):0}));let ready=es.filter(x=>ds.length&&x.min>=planPct);content.innerHTML=`<div class="card"><h2>Who can cover your next project?</h2><p class="muted">Checks every working day in the requested range, including future bookings, joining date and approved leave.</p><div class="toolbar" style="margin-top:16px"><label>Start date<input type="date" value="${planStart}" onchange="planStart=this.value;render()"></label><label>End date<input type="date" value="${planEnd}" onchange="planEnd=this.value;render()"></label><label>Required capacity %<input type="number" min="1" max="100" value="${planPct}" onchange="planPct=Math.max(1,Math.min(100,Number(this.value)||100));render()" style="width:140px"></label></div>${tools()}${!valid?'<p class="error">Select a valid date range of at most 366 calendar days.</p>':!ds.length?'<p class="error">This range contains no configured working days.</p>':`<div class="notice">${ready.length} employees can cover ${planPct}% capacity across all ${ds.length} working days.</div>${table(['Employee','Role / skills','Minimum spare capacity','Result','Action'],es.sort((a,b)=>b.min-a.min).map(({e,min})=>`<tr><td><b>${esc(e.name)}</b></td><td class="details">${esc(e.role)}<div class="muted">${esc(e.skills)}</div></td><td>${min}%</td><td>${min>=planPct?pill('Available throughout','green'):pill('Insufficient capacity','amber')}</td><td>${min>=planPct?`<button class="small primary" onclick="openForm('assignment',null,'${e.id}','${planStart}','${planEnd}',${planPct})">Assign</button>`:'—'}</td></tr>`))}`}</div>`}
+function assignments(){let rows=db.assignments.filter(a=>!search||[label('employees',a.employeeId),label('projects',a.projectId),label('clients',by('projects',a.projectId)?.clientId),a.task,a.status].join(' ').toLowerCase().includes(search.toLowerCase())).sort((a,b)=>b.start.localeCompare(a.start));content.innerHTML=`<div class="toolbar"><input type="search" aria-label="Search assignments" placeholder="Search employee, project, task…" value="${esc(search)}" oninput="search=this.value;renderBodyKeepFocus(this)"><button class="primary" onclick="openForm('assignment')">+ Assignment</button><button onclick="exportAssignments()">↓ Excel CSV</button></div><div class="notice">Planned, Confirmed and Completed records consume capacity on their recorded dates. Cancelled records do not. If work finishes early, shorten its end date before marking Completed.</div><div class="card">${table(['Employee','Customer / project','Task / location','Dates','Capacity','Status','Actions'],rows.map(a=>`<tr><td><b>${esc(label('employees',a.employeeId))}</b></td><td class="details">${esc(label('clients',by('projects',a.projectId)?.clientId))}<br><b>${esc(label('projects',a.projectId))}</b></td><td class="details">${esc(a.task||'—')}<div class="muted">${esc(a.location||'')}</div></td><td>${fmt(a.start)}<br>${fmt(a.end)}</td><td>${a.allocation}%</td><td>${pill(a.status,a.status==='Cancelled'?'':a.status==='Completed'?'green':'blue')}</td><td>${editBtn('assignment',a.id)} ${removeBtn('assignment',a.id)}</td></tr>`))}</div>`}
+function exportAssignments(){csv([['Employee','Customer','Project','Task','Location','Start','End (inclusive)','Allocation %','Status','Notes'],...db.assignments.map(a=>[label('employees',a.employeeId),label('clients',by('projects',a.projectId)?.clientId),label('projects',a.projectId),a.task,a.location,a.start,a.end,a.allocation,a.status,a.notes])],'project-assignments.csv')}
+function projects(){content.innerHTML=`<div class="toolbar"><button class="primary" onclick="openForm('project')">+ Project</button><button onclick="openForm('client')">+ Customer</button></div><div class="card">${table(['Project / code','Customer','Dates','Location / manager','Status / priority','Team','Actions'],db.projects.map(p=>`<tr><td><b>${esc(p.name)}</b><div class="muted">${esc(p.code||'')}</div></td><td>${esc(label('clients',p.clientId))}</td><td>${fmt(p.start)}<br>${fmt(p.end)}</td><td class="details">${esc(p.location||'—')}<div class="muted">${esc(p.manager||'')}</div></td><td>${pill(p.status)}<div class="muted">${esc(p.priority)}</div></td><td>${new Set(db.assignments.filter(a=>a.projectId===p.id&&effective(a)).map(a=>a.employeeId)).size} employees</td><td>${editBtn('project',p.id)} ${removeBtn('project',p.id)} <button class="small" onclick="openForm('assignment',null,null,null,null,null,'${p.id}')">Assign</button></td></tr>`))}</div><p class="muted">Project status is informational; capacity follows assignment dates and status. You must update team assignments when a project closes or is postponed.</p>`}
+function clients(){content.innerHTML=`<div class="toolbar"><button class="primary" onclick="openForm('client')">+ Customer</button></div><div class="card">${table(['Customer','Contact person','Email / phone','Projects','Notes','Actions'],db.clients.map(c=>`<tr><td><b>${esc(c.name)}</b></td><td>${esc(c.contact||'—')}</td><td>${esc(c.email||'—')}<br>${esc(c.phone||'')}</td><td>${db.projects.filter(p=>p.clientId===c.id).length}</td><td class="details">${esc(c.notes||'—')}</td><td>${editBtn('client',c.id)} ${removeBtn('client',c.id)}</td></tr>`))}</div>`}
+function employees(){let es=db.employees.filter(matches);content.innerHTML=`${tools('<button class="primary" onclick="openForm(\'employee\')">+ Employee</button>')}<div class="card">${table(['Employee / ID','Role / skills','Department / type','Joining date','Visa company','Capacity / status','Actions'],es.map(e=>`<tr><td><b>${esc(e.name)}</b><div class="muted">${esc(e.id)}</div></td><td class="details">${esc(e.role)}<div class="muted">${esc(e.skills||'')}</div></td><td>${esc(e.department||'—')}<br>${esc(e.type||'')}</td><td>${fmt(e.joiningDate)}</td><td>${esc(e.company||'—')}</td><td>${e.capacity}%<br>${pill(e.active?'Active':'Inactive',e.active?'green':'')}</td><td>${editBtn('employee',e.id)} ${removeBtn('employee',e.id)}</td></tr>`))}</div>`}
+function leaves(){content.innerHTML=`<div class="toolbar"><button class="primary" onclick="openForm('leave')">+ Leave / absence</button></div><div class="notice">Approved leave blocks the employee's full capacity for inclusive start/end dates. Pending and Cancelled leave do not block capacity. Recording approved leave over bookings requires an explicit conflict acknowledgment.</div><div class="card">${table(['Employee','Absence type','Dates','Return to work','Status','Notes','Actions'],db.leaves.sort((a,b)=>b.start.localeCompare(a.start)).map(l=>{let next=addDays(l.end,1),e=by('employees',l.employeeId);while(!isWork(next))next=addDays(next,1);return `<tr><td><b>${esc(label('employees',l.employeeId))}</b></td><td>${esc(l.type)}</td><td>${fmt(l.start)}<br>${fmt(l.end)}</td><td>${fmt(next)}<div class="muted">Next full capacity: ${fmt(nextFree(e,next))}</div></td><td>${pill(l.status,l.status==='Approved'?'amber':'')}</td><td class="details">${esc(l.notes||'—')}</td><td>${editBtn('leave',l.id)} ${removeBtn('leave',l.id)}</td></tr>`}))}</div>`}
+function settings(){content.innerHTML=`<div class="split"><div class="card"><h2>Working calendar</h2><label>Workspace title</label><input id="settingTitle" value="${esc(db.settings.title)}" style="width:100%"><p class="muted" style="margin-top:14px">Select working days used for capacity and availability.</p><div class="actions" style="margin:14px 0">${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].map((x,i)=>`<label class="tick"><input type="checkbox" class="workcheck" value="${i}" ${db.settings.workDays.includes(i)?'checked':''}>${x}</label>`).join('')}</div><button class="primary" onclick="saveSettings()">Save settings</button></div><div class="card"><h2>Backup & restore</h2><p>This tool saves in this browser only. It does not update data.json on disk automatically or share changes with other users.</p><div class="actions" style="margin:16px 0"><button onclick="exportData()">Download complete JSON</button><button onclick="document.getElementById('importFile').click()">Restore / load JSON</button><button onclick="loadFile()">Load adjacent data.json</button></div><p class="muted">Import replaces the current workspace after confirmation. Export a backup first. Clearing browser data can erase local changes.</p></div></div><div class="card"><h2>Planning rules</h2><p>Allocation is a percentage of one full-time employee. An employee with 100% capacity can work 50% on two projects. Approved leave blocks all capacity. Dates are inclusive and timezone is Dubai. Default calendar: Monday–Friday; change it above to match your service team.</p><p class="muted">Next free date searches up to 3 years ahead. Availability planner checks up to 366 calendar days. No bookings means no recorded commitment, so verify operations before deployment. Skill matching uses your entered role and skills; it does not certify qualifications.</p><p class="muted">JSON source: ${esc(db.source?.filename||'Manual / imported records')} · ${db.employees.length} employees · ${db.clients.length} customers · ${db.projects.length} projects</p></div>`}
+function saveSettings(){let w=[...document.querySelectorAll('.workcheck:checked')].map(x=>+x.value);if(!w.length)return toast('Select at least one working day.');db.settings={...db.settings,title:document.getElementById('settingTitle').value.trim()||'Service Team Roster',workDays:w};let persisted=save();render();toast(persisted?'Working calendar saved.':'Settings kept only in memory. Export JSON before closing.')}
+const keys={employee:'employees',client:'clients',project:'projects',assignment:'assignments',leave:'leaves'};
+function field(name,labelText,value='',type='text',required=false,wide=false,attrs=''){return `<div class="${wide?'full':''}"><label for="f-${name}">${esc(labelText)}</label>${type==='textarea'?`<textarea id="f-${name}" name="${name}" ${attrs}>${esc(value)}</textarea>`:`<input id="f-${name}" name="${name}" type="${type}" value="${esc(value)}" ${required?'required':''} ${attrs}>`}</div>`}
+function selectField(name,text,values,value,required=true){return `<div><label for="f-${name}">${esc(text)}</label><select id="f-${name}" name="${name}" ${required?'required':''}>${values.map(v=>option(Array.isArray(v)?v[0]:v,Array.isArray(v)?v[1]:v,value)).join('')}</select></div>`}
+function openForm(kind,id=null,emp=null,start=null,end=null,pct=null,proj=null){let obj=id?by(keys[kind],id):{},e=obj||{};editing={kind,id};document.getElementById('formTitle').textContent=(id?'Edit ':'Add ')+({employee:'employee',client:'customer',project:'project',assignment:'assignment',leave:'leave / absence'}[kind]);document.getElementById('formError').textContent='';let f='';
+if(kind==='employee')f=field('name','Employee name',e.name,'text',true)+field('role','Job title',e.role,'text',true)+field('skills','Skills / certifications (comma separated)',e.skills,'text',false,true)+field('department','Department',e.department||'Service')+field('type','Employee type',e.type)+field('joiningDate','Joining date',e.joiningDate,'date')+field('company','Visa issuance company',e.company)+field('capacity','Capacity % of full time',e.capacity??100,'number',true,false,'min="1" max="100" step="1"')+selectField('active','Employee status',[['true','Active'],['false','Inactive']],String(e.active??true))+field('notes','Notes',e.notes,'textarea',false,true);
+if(kind==='client')f=field('name','Customer name',e.name,'text',true,true)+field('contact','Contact person',e.contact)+field('email','Email',e.email,'email')+field('phone','Phone',e.phone)+field('notes','Notes',e.notes,'textarea',false,true);
+if(kind==='project')f=field('name','Project name',e.name,'text',true)+field('code','Project / PO reference',e.code)+selectField('clientId','Customer',[['','Select customer…'],...db.clients.map(c=>[c.id,c.name])],e.clientId)+selectField('status','Project status',['Planned','Active','On hold','Completed','Cancelled'],e.status||'Planned')+field('start','Project start',e.start||asOf,'date',true)+field('end','Project end (inclusive)',e.end||addDays(asOf,6),'date',true)+field('location','Site / location',e.location)+field('manager','Project manager',e.manager)+selectField('priority','Priority',['Normal','High','Critical'],e.priority||'Normal')+field('notes','Scope / notes',e.notes,'textarea',false,true);
+if(kind==='assignment')f=selectField('employeeId','Employee',[['','Select employee…'],...db.employees.filter(x=>x.active||x.id===e.employeeId).map(x=>[x.id,x.name+' — '+x.role])],e.employeeId||emp)+selectField('projectId','Project',[['','Select project…'],...db.projects.filter(p=>!['Completed','Cancelled'].includes(p.status)||p.id===e.projectId).map(p=>[p.id,label('clients',p.clientId)+' / '+p.name])],e.projectId||proj)+field('task','Task / work package',e.task,'text',true,true)+field('start','Start date',e.start||start||asOf,'date',true)+field('end','End date (inclusive)',e.end||end||start||addDays(asOf,6),'date',true)+field('allocation','Allocation % of full time',e.allocation??pct??100,'number',true,false,'min="1" max="100" step="1"')+selectField('status','Booking status',['Planned','Confirmed','Completed','Cancelled'],e.status||'Confirmed')+field('location','Work site (optional; otherwise project site)',e.location)+field('notes','Notes / handover',e.notes,'textarea',false,true);
+if(kind==='leave')f=selectField('employeeId','Employee',[['','Select employee…'],...db.employees.map(x=>[x.id,x.name])],e.employeeId||emp)+selectField('type','Absence type',['Annual leave','Sick leave','Emergency leave','Unpaid leave','Training','Other absence'],e.type||'Annual leave')+field('start','Start date',e.start||asOf,'date',true)+field('end','End date (inclusive)',e.end||asOf,'date',true)+selectField('status','Approval status',['Pending','Approved','Cancelled'],e.status||'Approved')+field('notes','Notes (avoid sensitive medical details)',e.notes,'textarea',false,true)+`<label class="tick full"><input name="acknowledge" type="checkbox">Record approved leave even if bookings overlap; flag conflicts for follow-up.</label>`;
+document.getElementById('fields').innerHTML=f;modal.showModal()}
+function newId(prefix){return prefix+'-'+(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2))}
+function validDate(s){return /^\d{4}-\d{2}-\d{2}$/.test(s)&&!isNaN(date(s))&&date(s).toISOString().slice(0,10)===s}
+function validateRange(e){if(!validDate(e.start)||!validDate(e.end)||e.start>e.end)throw Error('Start / end dates are invalid or reversed.');if((date(e.end)-date(e.start))/86400000>3659)throw Error('Maximum record length is 3,660 calendar days.');}
+form.addEventListener('submit',ev=>{ev.preventDefault();let {kind,id}=editing,e=Object.fromEntries(new FormData(form));for(let k in e)e[k]=e[k].trim();try{
+if(['employee','project','client'].includes(kind)&&!e.name)throw Error('Name is required.');
+if(kind==='employee'){e.capacity=+e.capacity;e.active=e.active==='true';if(!e.role)throw Error('Job title is required.');if(!(e.capacity>=1&&e.capacity<=100&&Number.isInteger(e.capacity)))throw Error('Capacity must be an integer from 1 to 100.');if(e.joiningDate&&!validDate(e.joiningDate))throw Error('Invalid joining date.');let current=by('employees',id);if(e.joiningDate&&db.assignments.some(a=>a.employeeId===id&&effective(a)&&a.start<e.joiningDate))throw Error('Joining date would fall after existing assignments. Adjust the bookings first.');if(current&&e.capacity<current.capacity){let existing=db.assignments.filter(a=>a.employeeId===id&&effective(a));if(existing.some(a=>days(a.start,a.end).some(d=>isWork(d)&&load(current,d)>e.capacity)))throw Error('Capacity reduction would overbook existing assignments. Adjust those bookings first.');}}
+if(kind==='client'&&db.clients.some(c=>c.id!==id&&c.name.toLowerCase()===e.name.toLowerCase()))throw Error('This customer name already exists.');
+if(kind==='project'){validateRange(e);if(!by('clients',e.clientId))throw Error('Add / select a customer first.');if(db.assignments.some(a=>a.projectId===id&&effective(a)&&(a.start<e.start||a.end>e.end)))throw Error('Project dates must cover existing team assignments. Adjust bookings first.');}
+if(kind==='assignment'){validateRange(e);let employee=by('employees',e.employeeId),project=by('projects',e.projectId);if(!employee||!project)throw Error('Select an employee and project; add a customer and project first.');if(!e.task)throw Error('Task / work package is required.');e.allocation=+e.allocation;if(!Number.isInteger(e.allocation)||e.allocation<1||e.allocation>100)throw Error('Allocation must be an integer from 1 to 100.');if(e.status!=='Cancelled'){if(!employee.active)throw Error('Inactive employees cannot be booked.');if(['Completed','Cancelled'].includes(project.status)&&!id)throw Error('Choose an open project.');if(employee.joiningDate&&e.start<employee.joiningDate)throw Error('Assignment starts before the employee joining date.');if(e.start<project.start||e.end>project.end)throw Error('Assignment dates must fit within project dates.');let ds=days(e.start,e.end).filter(isWork);if(!ds.length)throw Error('Assignment must include at least one configured working day.');let issue=ds.find(d=>absence(employee,d).length||load(employee,d,id)+e.allocation>employee.capacity);if(issue)throw Error('Booking blocked on '+fmt(issue)+': approved leave or total allocation exceeds '+employee.capacity+'% capacity. Review the timeline or reduce allocation.');}e.location=e.location||project.location||'';}
+if(kind==='leave'){validateRange(e);let employee=by('employees',e.employeeId);if(!employee)throw Error('Select an employee.');if(e.status==='Approved'){let ds=days(e.start,e.end).filter(isWork);if(ds.some(d=>absence(employee,d,id).length))throw Error('Approved absence already exists in this period. Edit that record instead.');if(ds.some(d=>load(employee,d)>0)&&!e.acknowledge)throw Error('Leave overlaps booked work. Reassign the work, or tick the acknowledgment to record leave and flag the conflict.');}delete e.acknowledge;}
+e.id=id||newId({employee:'EMP',project:'PRJ',client:'CLI',assignment:'ASN',leave:'LVE'}[kind]);let list=db[keys[kind]],i=list.findIndex(x=>x.id===id);if(i>=0)list[i]={...list[i],...e};else list.push(e);let persisted=save();modal.close();render();toast(persisted?'Record saved.':'Record kept only in memory. Export JSON before closing.');}catch(err){document.getElementById('formError').textContent=err.message}});
+function removeRecord(kind,id){let key=keys[kind],obj=by(key,id);if(!obj)return;let referenced=kind==='employee'&&(db.assignments.some(a=>a.employeeId===id)||db.leaves.some(a=>a.employeeId===id))||kind==='client'&&db.projects.some(p=>p.clientId===id)||kind==='project'&&db.assignments.some(a=>a.projectId===id);if(referenced)return toast('This record has linked records. Keep it for history or remove its linked records first; employees can be marked inactive.');if(!confirm('Delete this '+kind+' record? This cannot be undone without a backup.'))return;db[key]=db[key].filter(x=>x.id!==id);let persisted=save();render();toast(persisted?'Record deleted.':'Record removed only in memory. Export JSON before closing.')}
+function validateData(data){if(!data||data.schemaVersion!==1)throw Error('Expected a roster schemaVersion 1 JSON file.');for(let k of ['employees','clients','projects','assignments','leaves']){if(!Array.isArray(data[k]))throw Error('Missing list: '+k);let ids=new Set();for(let x of data[k]){if(!x||typeof x.id!=='string'||!/^[A-Za-z0-9_-]+$/.test(x.id)||ids.has(x.id))throw Error('Invalid / duplicate ID in '+k);ids.add(x.id);}}
+if(!data.settings||typeof data.settings.title!=='string'||!Array.isArray(data.settings.workDays)||!data.settings.workDays.length||data.settings.workDays.some(d=>!Number.isInteger(d)||d<0||d>6))throw Error('Invalid working calendar.');
+for(let e of data.employees){if(typeof e.name!=='string'||!e.name.trim()||typeof e.role!=='string'||!e.role.trim()||typeof e.active!=='boolean'||!Number.isInteger(e.capacity)||e.capacity<1||e.capacity>100||(e.joiningDate&&!validDate(e.joiningDate)))throw Error('Invalid employee: '+e.id);}
+for(let c of data.clients)if(typeof c.name!=='string'||!c.name.trim())throw Error('Invalid customer name.');
+for(let p of data.projects){validateRange(p);if(typeof p.name!=='string'||!p.name.trim()||!data.clients.some(c=>c.id===p.clientId)||!['Planned','Active','On hold','Completed','Cancelled'].includes(p.status))throw Error('Invalid project: '+p.id);}
+for(let a of data.assignments){validateRange(a);let e=data.employees.find(e=>e.id===a.employeeId),p=data.projects.find(p=>p.id===a.projectId);if(!e||!p||!Number.isInteger(a.allocation)||a.allocation<1||a.allocation>100||!['Planned','Confirmed','Completed','Cancelled'].includes(a.status)||typeof a.task!=='string'||!a.task.trim())throw Error('Invalid assignment: '+a.id);if(effective(a)&&(a.start<p.start||a.end>p.end||(e.joiningDate&&a.start<e.joiningDate)))throw Error('Assignment outside project / joining dates: '+a.id);}
+for(let l of data.leaves){validateRange(l);if(!data.employees.some(e=>e.id===l.employeeId)||!['Pending','Approved','Cancelled'].includes(l.status)||typeof l.type!=='string')throw Error('Invalid absence: '+l.id);}
+return data;}
+function importData(data){validateData(data);if(!confirm('Replace this browser roster with imported data? Download a JSON backup first if you need to retain current records.'))return;db=data;let persisted=save();render();toast(persisted?'Imported successfully. Review the timeline for any booking conflicts in the imported data.':'Imported into memory only. Export JSON before closing.')}
+document.getElementById('importFile').addEventListener('change',async ev=>{let f=ev.target.files[0];if(!f)return;try{if(f.size>10000000)throw Error('JSON file must be below 10 MB.');importData(JSON.parse(await f.text()));}catch(e){toast('Import failed: '+e.message)}ev.target.value=''});
+async function loadFile(){try{let r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);importData(await r.json())}catch(e){toast('Cannot load data.json here. Use Import JSON, or start the local server with convert.py --serve.')}}
+async function init(){let stored;try{stored=localStorage.getItem(KEY)}catch(e){}if(stored){try{db=validateData(JSON.parse(stored));render();return}catch(e){toast('Saved roster could not be read. Download / restore a valid backup.')}}db=validateData(JSON.parse(document.getElementById('seed').textContent));if(location.protocol!=='file:'){try{let r=await fetch('data.json',{cache:'no-store'});if(r.ok)db=validateData(await r.json())}catch(e){toast('Using embedded employee list. Import JSON to load another roster.')}}render();}
+init();
+</script></body></html>
